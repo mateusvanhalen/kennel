@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 
+//didnt get to the searh bar just yet.
 class NavBar extends Component {
     render() {
         return (
