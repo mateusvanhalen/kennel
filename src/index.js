@@ -10,7 +10,7 @@ ReactDOM.render(
     <Router>
         <Kennel />
     </Router>
-    , document.getElementById('root'));
+    ,document.getElementById('root'));
 
 registerServiceWorker();
 

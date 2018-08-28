@@ -11,7 +11,6 @@ class Kennel extends Component {
         return (
             <React.Fragment>
                 <NavBar />
-
                 <ApplicationViews />
             </React.Fragment>
         )

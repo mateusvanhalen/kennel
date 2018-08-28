@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class OwnerList extends Component{
+class OwnerList extends Component{
 
     render() {
         return (
@@ -11,10 +11,11 @@ export default class OwnerList extends Component{
                 this.props.owners.map(owner =>
                 <div id={`owners--${owner.id}`} key={owner.id}>
                 <h4>{owner.name}</h4>
-                <p>{owner.address}</p>
+                <p>{owner.phone}</p>
           </div>
         )
     }
     </div>
     )
 }}
+export default OwnerList

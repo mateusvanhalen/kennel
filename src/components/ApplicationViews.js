@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
+import OwnerList from './owner/OwnerList'
 
 
 export default class ApplicationViews extends Component {
@@ -13,6 +14,8 @@ export default class ApplicationViews extends Component {
         owners: []
     }
 
+
+
     componentDidMount() {
         const newState = {}
 
@@ -22,14 +25,20 @@ export default class ApplicationViews extends Component {
             .then(() => fetch("http://localhost:5002/employees")
             .then(r => r.json()))
             .then(employees => newState.employees = employees)
+            .then(() => fetch("http://localhost:5002/locations")
+            .then(r => r.json()))
+            .then(locations => newState.locations = locations)
+            .then(() => fetch("http://localhost:5002/owners")
+            .then(r => r.json()))
+            .then(owners => newState.owners = owners)
             .then(() => this.setState(newState))
     }
 
-
+//Hey! if you leave the exact path as ="/" that will populate on the page when it loads!!
     render() {
         return (
             <React.Fragment>
-                <Route exact path="/" render={(props) => {
+                <Route exact path="/locations" render={(props) => {
                     return <LocationList locations={this.state.locations} />
                 }} />
                 <Route exact path="/animals" render={(props) => {
@@ -37,6 +46,9 @@ export default class ApplicationViews extends Component {
                 }} />
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
+                }} />
+                <Route exact path="/owners" render={(props) => {
+                    return <OwnerList owners={this.state.owners} />
                 }} />
             </React.Fragment>
         )
