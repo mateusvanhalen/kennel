@@ -1,0 +1,18 @@
+.owners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(240, 4, 4)
+
+}
+
+.phone {
+    color: red;
+    font-family: cursive;
+}
+
+.name {
+    color: blue;
+    margin: 2em
+}
