@@ -27,8 +27,7 @@ export default class AnimalDetail extends Component {
                                             .then(() => this.props.history.push("/animals"))}
                             className="card-link">Delete</a>
                             <a href="#"
-                            onClick={() => this.props.editAnimal(animal.id)
-                                            .then(() => this.props.history.push("/animals"))}
+                            onClick={() => this.props.history.push(`/animals/edit/${animal.id}`)}
                             className="card-link">Edit</a>
                     </div>
                 </div>

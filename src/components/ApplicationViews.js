@@ -11,6 +11,7 @@ import LocationManager from '../modules/AnimalManager'
 import AnimalDetail from './animal/AnimalDetail'
 import AnimalForm from './animal/AnimalForm'
 import Login from './Login'
+import AnimalEditForm from './animal/AnimalEditForm'
 
 
 export default class ApplicationViews extends Component {
@@ -40,9 +41,14 @@ export default class ApplicationViews extends Component {
             animals: animals
         }))
 
-    editAnimal = id => {
+        // Make sure to pass an object into the PUT for the replacement of whatever was located at the ID
+    editAnimal = (id, object) => {
         return fetch(`http://localhost:5002/animals/${id}`, {
-            method: "PUT"
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(object)
         })
             .then(e => e.json())
             .then(() => fetch(`http://localhost:5002/animals`))
@@ -116,6 +122,12 @@ export default class ApplicationViews extends Component {
 
                 <Route path="/animals/:animalId(\d+)" render={(props) => {
                     return <AnimalDetail {...props} deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
+                }} />
+                <Route path="/animals/edit/:animalId(\d+)" render={(props) => {
+                    return <AnimalEditForm {...props}
+                                            editAnimal={this.editAnimal}
+                                            animals={this.state.animals}
+                                            employees={this.state.employees} />
                 }} />
                 {/* {this is a delete option built off of the regular post option} */}
 

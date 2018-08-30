@@ -31,36 +31,22 @@
   ],
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles"
-    },
-    {
-      "id": 2,
-      "name": "Jack"
-    },
-    {
-      "id": 3,
-      "name": "Angus"
-    },
-    {
-      "id": 4,
-      "name": "Henley"
-    },
-    {
-      "id": 6,
-      "name": "Checkers"
-    },
-    {
       "name": "Carl",
-      "breed": "Hog",
-      "employeeId": 3,
-      "id": 7
+      "employeeId": 1,
+      "breed": "bastard",
+      "id": 1
     },
     {
       "name": "bandit",
       "breed": "hot dog",
       "employeeId": 4,
-      "id": 8
+      "id": 2
+    },
+    {
+      "name": "Matthew Hall",
+      "employeeId": 4,
+      "breed": "Dragon",
+      "id": 3
     }
   ],
   "owners": [
